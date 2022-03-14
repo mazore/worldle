@@ -104,6 +104,7 @@ function App() {
               <InstallButton pwaInstall={pwaInstall} />
             )}
             <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto">
+              <span className="text-green-600">BETTER </span>
               Wor<span className="text-green-600">l</span>dle
             </h1>
             <button
@@ -128,6 +129,10 @@ function App() {
           />
 
           <Game settingsData={settingsData} updateSettings={updateSettings} />
+
+          <footer className="flex justify-center items-center text-sm mt-8 mb-1">
+            By Evan Mazor
+          </footer>
 
           {/* <footer className="flex justify-center items-center text-sm mt-8 mb-1">
             <Twemoji
