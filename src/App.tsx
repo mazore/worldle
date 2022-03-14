@@ -17,9 +17,10 @@ import { getDayString, useTodays } from "./hooks/useTodays";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 const difficulties = ["Easy", "Medium", "Hard", "Impossible"];
-const localDiffIndex: number = JSON.parse(
-  window.localStorage.getItem("difficulty")!
-).index;
+let localDiffIndex = 0;
+if (window.localStorage.getItem("difficulty") != null) {
+  localDiffIndex = JSON.parse(window.localStorage.getItem("difficulty")!).index;
+}
 const localDiff: string = difficulties[localDiffIndex];
 
 const supportLink: Record<string, string> = {
