@@ -302,9 +302,10 @@ function getCountry(dayString: string) {
       ? countriesWithImage.find((country) => country.code === forcedCountryCode)
       : undefined;
 
-  const diffIndex = JSON.parse(
-    window.localStorage.getItem("difficulty")!
-  ).index;
+  let diffIndex = 0;
+  if (window.localStorage.getItem("difficulty") != null) {
+    diffIndex = JSON.parse(window.localStorage.getItem("difficulty")!).index;
+  }
   const popMin = [
     58005.463, // Top 25 countries
     28515.829, // Top 50 countries
