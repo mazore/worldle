@@ -16,7 +16,7 @@ import { getDayString, useTodays } from "./hooks/useTodays";
 
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
-const difficulties = ["Easy", "Medium", "Hard", "Impossible"];
+const difficulties = ["Random", "Easy", "Medium", "Hard", "Impossible"];
 let localDiffIndex = 0;
 if (window.localStorage.getItem("difficulty") != null) {
   localDiffIndex = JSON.parse(window.localStorage.getItem("difficulty")!).index;
@@ -43,7 +43,9 @@ function App() {
 
   const diffChange = (diff: any) => {
     const diffText: string = diff.value;
-    const index = { Easy: 0, Medium: 1, Hard: 2, Impossible: 3 }[diffText];
+    const index = { Random: 0, Easy: 1, Medium: 2, Hard: 3, Impossible: 4 }[
+      diffText
+    ];
     window.localStorage.setItem("difficulty", JSON.stringify({ index: index }));
   };
 
@@ -130,9 +132,9 @@ function App() {
 
           <Game settingsData={settingsData} updateSettings={updateSettings} />
 
-          <footer className="flex justify-center items-center text-sm mt-8 mb-1">
+          {/* <footer className="flex justify-center items-center text-sm mt-8 mb-1">
             By Evan Mazor
-          </footer>
+          </footer> */}
 
           {/* <footer className="flex justify-center items-center text-sm mt-8 mb-1">
             <Twemoji

@@ -307,12 +307,14 @@ function getCountry(dayString: string) {
     diffIndex = JSON.parse(window.localStorage.getItem("difficulty")!).index;
   }
   const popMin = [
+    0, // No minimum
     58005.463, // Top 25 countries
     28515.829, // Top 50 countries
     1906.743, // Top 150 countries
     0, // No minimum
   ][diffIndex];
   const popMax = [
+    Infinity, // No maximum
     Infinity, // No maximum
     Infinity, // No maximum
     28515.829, // Below top 50
