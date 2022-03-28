@@ -132,6 +132,8 @@ function App() {
 
           <Game settingsData={settingsData} updateSettings={updateSettings} />
 
+          <a href='https://mazore.github.io/worldle/'>New Game</a>
+
           {/* <footer className="flex justify-center items-center text-sm mt-8 mb-1">
             By Evan Mazor
           </footer> */}
